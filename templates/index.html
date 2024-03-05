@@ -1,0 +1,112 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Places Voting SPA</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Update as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/app.js" defer></script> <!-- Ensure app.js is deferred to run after the DOM is loaded -->
+</head>
+<body>
+    <div id="app">
+        <h1>Welcome to Wonder What Is Tourism (WAIT) !!! </h1>
+
+        <!-- Submit New Place Section -->
+        <section id="submitPlaceSection">
+            <h2>Enter Your Recommendations</h2>
+<!--            <label>User ID: <input type="text" id="submituser_id"></label>-->
+            <label>User ID: <input type="text" id="submitUserId" oninput="this.value = this.value.toUpperCase()"></label> <!-- Corrected ID for submission -->
+            <!-- For the Place field -->
+            <label>Place: <input type="text" id="submitPlace" list="placeList" oninput="this.value = this.value.toUpperCase()"></label>
+            <datalist id="placeList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <!-- For the Country field -->
+            <label>Country: <input type="text" id="submitCountry" list="countryList" oninput="this.value = this.value.toUpperCase()"></label>
+            <datalist id="countryList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <label>Reason: <textarea id="submitReason" oninput="this.value = this.value.toUpperCase()"></textarea></label>
+            <button onclick="submitPlace()">Submit</button>
+        </section>
+
+        <!-- Voting Section -->
+        <section id="votingSection">
+            <h2>Vote for Places</h2>
+            <label>User ID: <input type="text" id="votingUserId" oninput="this.value = this.value.toUpperCase()"></label>
+
+            <!-- Inside the Voting Section -->
+            <label>Filter by Place:</label>
+            <input list="voteFilterPlaceList" id="filterPlaceInput" placeholder="Filter by Place">
+            <datalist id="voteFilterPlaceList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <label>Filter by Country:</label>
+            <input list="voteFilterCountryList" id="filterCountryInput" placeholder="Filter by Country">
+            <datalist id="voteFilterCountryList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <label>Sort by Votes:</label>
+            <select id="sortOrderDropdown">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+
+
+
+            <button onclick="fetchVotingOptions()">Show Voting Options</button>
+            <div id="placesList">
+                <!-- Places for voting will be populated here by app.js -->
+            </div>
+        </section>
+
+
+        <!-- Picks Section -->
+        <section id="picksSection">
+            <h2>Your and Other Picks</h2>
+            <label>User ID: <input type="text" id="picksUserId" oninput="this.value = this.value.toUpperCase()"></label>
+
+            <!-- Inside the Picks Section -->
+            <label>Filter by Place:</label>
+            <input list="picksFilterPlaceList" id="picksFilterPlaceInput" placeholder="Filter by Place">
+            <datalist id="picksFilterPlaceList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <label>Filter by Country:</label>
+            <input list="picksFilterCountryList" id="picksFilterCountryInput" placeholder="Filter by Country">
+            <datalist id="picksFilterCountryList">
+                <!-- Options will be dynamically populated -->
+            </datalist>
+
+            <label>Sort by Votes:</label>
+            <select id="picksSortOrderDropdown">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+
+            <button onclick="fetchPicks()">Show Picks</button>
+
+            <h3>Your Picks</h3>
+            <ul id="userPicksList">
+                <!-- User's picks will be populated here -->
+            </ul>
+            <h3>Other Picks</h3>
+            <ul id="otherPicksList">
+                <!-- Other picks will be populated here -->
+            </ul>
+        </section>
+
+        <div id="otherPicksChartContainer" style="display:none;">
+            <h3>Top Other Picks Chart</h3>
+            <canvas id="otherPicksChart"></canvas>
+        </div>
+
+    </div>
+</body>
+</html>

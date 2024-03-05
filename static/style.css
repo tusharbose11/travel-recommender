@@ -1,0 +1,154 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    margin: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+label, input, button, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+
+/* Filter and Sorting Dropdowns Styling */
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 16px;
+}
+
+/* Style for filter labels */
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Button Styling */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px; /* Add some space above the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Section Styling */
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Enhance the visual hierarchy and spacing */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    input[type="text"], select, button, textarea {
+        width: 100%; /* Ensure full width on smaller screens */
+    }
+}
+
+
+/* Input fields associated with datalists */
+input[list] {
+    width: 100%; /* Match the width of other form elements */
+    padding: 8px; /* Consistent padding with other inputs */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Match the border-radius of other form elements */
+    background-color: #fff; /* Ensure a white background */
+    font-size: 16px; /* Readable text size */
+    margin-bottom: 15px; /* Space below the input field */
+}
+
+/* Focus state for input fields to enhance visibility */
+input[list]:focus {
+    border-color: #007bff; /* Highlight color to indicate focus */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25); /* Soft glow effect */
+}
+
+/* Placeholder styling for input fields to improve clarity */
+input[list]::placeholder {
+    color: #6c757d; /* Placeholder text color */
+    opacity: 1; /* Ensure placeholder is always visible */
+}
+
+/* Hover state for input fields for interactivity */
+input[list]:hover {
+    border-color: #0056b3; /* Slightly darker border on hover */
+}
